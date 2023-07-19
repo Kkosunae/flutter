@@ -8,16 +8,20 @@ class KakaoLogin implements SocialLogin {
       bool isInstalled = await isKakaoTalkInstalled();
       if (isInstalled) {
         try {
-          await UserApi.instance.loginWithKakaoTalk();
+          OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
+          print('카카오톡으로 로그인 성공 ${token.accessToken}');
           return true;
         } catch (e) {
+          print('카카오톡으로 로그인 살패 ${e}');
           return false;
         }
       } else {
         try {
-          await UserApi.instance.loginWithKakaoAccount();
+          OAuthToken token = await UserApi.instance.loginWithKakaoAccount();
+          print('카카오톡으로 로그인 성공 ${token.accessToken}');
           return true;
         } catch (e) {
+          print('카카오톡으로 로그인 살패 ${e}');
           return false;
         }
 
@@ -36,5 +40,4 @@ class KakaoLogin implements SocialLogin {
       return false;
     }
   }
-
 }

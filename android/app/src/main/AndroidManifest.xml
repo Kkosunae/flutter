@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kkosunae.kkosunae">
+    package="com.kkosunae">
     <application
         android:label="kkosunae"
         android:name="${applicationName}"
@@ -14,7 +14,7 @@
 
                 <!-- "kakao${YOUR_NATIVE_APP_KEY}://oauth" 형식의 앱 실행 스킴 설정 -->
                 <!-- 카카오 로그인 Redirect URI -->
-                <data android:scheme="kakao4a705167f1b89e0ab9347e08a2540f6f" android:host="oauth"/>
+                <data android:scheme="kakaoae6bcf099a4885a217f4cd8a63548c5e" android:host="oauth"/>
             </intent-filter>
         </activity>
         <activity

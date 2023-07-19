@@ -19,4 +19,14 @@ class MainViewModel {
     isLogined = false;
     user = null;
   }
+  Future printTokenInfo() async {
+    try {
+      AccessTokenInfo tokenInfo = await UserApi.instance.accessTokenInfo();
+      print('토큰 정보 보기 성공'
+          '\n회원정보: ${tokenInfo.id}'
+          '\n만료시간: ${tokenInfo.expiresIn} 초');
+    } catch (error) {
+      print('토큰 정보 보기 실패 $error');
+    }
+  }
 }

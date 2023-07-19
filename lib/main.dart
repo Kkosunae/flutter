@@ -6,7 +6,7 @@ import 'package:kkosunae/main_viewmodel.dart';
 late final MainViewModel viewModel;
 
 void main() {
-  KakaoSdk.init(nativeAppKey: '4a705167f1b89e0ab9347e08a2540f6f');
+  KakaoSdk.init(nativeAppKey: 'ae6bcf099a4885a217f4cd8a63548c5e');
   runApp(const MyApp());
 }
 
@@ -56,7 +56,12 @@ class MyApp extends StatelessWidget {
                     await viewModel.logout();
                     setState(() {});
                   },
-                  child: Text('Logout'))
+                  child: Text('Logout')),
+              ElevatedButton(
+                  onPressed: () async {
+                    await viewModel.printTokenInfo();
+                  },
+                  child: Text('tokenInfo'))
             ],
           ),
         ),
