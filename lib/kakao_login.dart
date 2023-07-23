@@ -1,4 +1,5 @@
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:kkosunae/login_platform.dart';
 import 'package:kkosunae/social_login.dart';
 
 class KakaoLogin implements SocialLogin {

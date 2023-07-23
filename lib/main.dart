@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:kkosunae/google_login.dart';
 import 'package:kkosunae/kakao_login.dart';
+import 'package:kkosunae/login_platform.dart';
 import 'package:kkosunae/main_viewmodel.dart';
 
 late final MainViewModel viewModel;
+LoginPlatform _loginPlatform = LoginPlatform.none;
 
 void main() {
   KakaoSdk.init(nativeAppKey: 'ae6bcf099a4885a217f4cd8a63548c5e');
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
   }
 
   class _MyHomePageState extends State<MyHomePage> {
-    final viewModel = MainViewModel(KakaoLogin());
+    final viewModel = MainViewModel(_loginPlatform);
 
     @override
     Widget build(BuildContext context) {
@@ -46,6 +49,19 @@ class MyApp extends StatelessWidget {
                   width: 300,
                   child: IconButton(
                     onPressed: () async {
+                      _loginPlatform =LoginPlatform.kakao;
+                      viewModel.setLoginPlatform(_loginPlatform);
+                      await viewModel.login();
+                      setState(() {});
+                    },
+                    icon: Image.asset('assets/kakao_login_medium_narrow.png'), )
+              ),
+              SizedBox(
+                  width: 300,
+                  child: IconButton(
+                    onPressed: () async {
+                      _loginPlatform =LoginPlatform.google;
+                      viewModel.setLoginPlatform(_loginPlatform);
                       await viewModel.login();
                       setState(() {});
                     },

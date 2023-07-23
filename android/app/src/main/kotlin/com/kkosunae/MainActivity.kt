@@ -1,4 +1,4 @@
-package com.kkosunae.kkosunae
+package com.kkosunae
 
 import io.flutter.embedding.android.FlutterActivity
 
