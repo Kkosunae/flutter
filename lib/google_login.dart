@@ -7,6 +7,7 @@ class GoogleLogin implements SocialLogin {
   Future<bool> login() async{
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     if(googleUser != null) {
+      print("success google login");
       return true;
     } else {
       return false;

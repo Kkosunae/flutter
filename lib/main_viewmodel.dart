@@ -1,5 +1,6 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:kkosunae/apple_login.dart';
 import 'package:kkosunae/google_login.dart';
 import 'package:kkosunae/kakao_login.dart';
 import 'package:kkosunae/login_platform.dart';
@@ -23,7 +24,7 @@ class MainViewModel {
         _socialLogin = KakaoLogin();
         break;
       case LoginPlatform.apple:
-        _socialLogin = KakaoLogin();
+        _socialLogin = AppleLogin();
         break;
       case LoginPlatform.none :
         break;

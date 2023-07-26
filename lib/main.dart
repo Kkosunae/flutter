@@ -67,6 +67,17 @@ class MyApp extends StatelessWidget {
                     },
                     icon: Image.asset('assets/kakao_login_medium_narrow.png'), )
               ),
+              SizedBox(
+                  width: 300,
+                  child: IconButton(
+                    onPressed: () async {
+                      _loginPlatform =LoginPlatform.apple;
+                      viewModel.setLoginPlatform(_loginPlatform);
+                      await viewModel.login();
+                      setState(() {});
+                    },
+                    icon: Image.asset('assets/kakao_login_medium_narrow.png'), )
+              ),
               ElevatedButton(
                   onPressed: () async {
                     await viewModel.logout();
