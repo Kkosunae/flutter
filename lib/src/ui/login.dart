@@ -122,7 +122,7 @@ class SecondScreen extends StatelessWidget {
                 child: const Text('완료'),
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainApp()),);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()),);
 
                 },
               ),

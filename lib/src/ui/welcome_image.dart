@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kkosunae/src/recources/login_platform.dart';
 
-import '../../constants.dart';
-import '../../login_platform.dart';
-import '../../main_viewmodel.dart';
-import '../login.dart';
+import '../constants.dart';
+import '../blocs/main_viewmodel.dart';
+import 'login.dart';
 
 LoginPlatform _loginPlatform = LoginPlatform.none;
 

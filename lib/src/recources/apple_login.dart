@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:kkosunae/src/recources/social_login.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-import 'package:kkosunae/social_login.dart';
 
 class AppleLogin implements SocialLogin {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/welcome_image.dart';
+import 'welcome_image.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({

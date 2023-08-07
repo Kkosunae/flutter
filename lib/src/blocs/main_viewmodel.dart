@@ -1,10 +1,11 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
-import 'package:kkosunae/apple_login.dart';
-import 'package:kkosunae/google_login.dart';
-import 'package:kkosunae/kakao_login.dart';
-import 'package:kkosunae/login_platform.dart';
-import 'package:kkosunae/social_login.dart';
+import 'package:kkosunae/src/models/local_model.dart';
+import 'package:kkosunae/src/recources/apple_login.dart';
+import 'package:kkosunae/src/recources/google_login.dart';
+import 'package:kkosunae/src/recources/kakao_login.dart';
+import 'package:kkosunae/src/recources/login_platform.dart';
+import 'package:kkosunae/src/recources/social_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainViewModel {
@@ -18,6 +19,7 @@ class MainViewModel {
     // TODO: implement MainViewModel
      initSharedPreferences();
   }
+
   Future initSharedPreferences() async {
     _prefs = await SharedPreferences.getInstance();
   }
@@ -56,9 +58,12 @@ class MainViewModel {
       }
     }
   }
+
   Future logout() async {
     await _socialLogin.logout();
     isLogined = false;
+    LocalModel localModel = LocalModel();
+    localModel.saveIsLogin(false);
     switch (mPlatform) {
       case LoginPlatform.google :
         break;
@@ -70,8 +75,8 @@ class MainViewModel {
       case LoginPlatform.none :
         break;
     }
-
   }
+
   Future printTokenInfo() async {
     switch (mPlatform) {
       case LoginPlatform.google :
@@ -98,9 +103,7 @@ class MainViewModel {
       case LoginPlatform.none :
         break;
     }
-
   }
-
 
   Future saveData() async{
     switch (mPlatform) {
@@ -127,7 +130,8 @@ class MainViewModel {
           _prefs.setString('login_info_name', '${user?.kakaoAccount?.profile}');
           _prefs.setString('login_info_email', '${user?.kakaoAccount?.email}');
           _prefs.setString('login_info_id', '${tokenInfo.id}');
-
+          LocalModel localModel = LocalModel();
+          localModel.saveIsLogin(true);
           print('토큰 정보 보기 성공'
               '\n회원정보: ${tokenInfo.id}'
               '\n만료시간: ${tokenInfo.expiresIn} 초');
@@ -144,13 +148,9 @@ class MainViewModel {
 
   Future loadData() async{
     print('loadDate__');
-
     print(_prefs.getString('login_platform'));
     print(_prefs.getString('login_info_name'));
-
     print(_prefs.getString('login_info_email'));
-
     print(_prefs.getString('login_info_id'));
-
   }
 }
