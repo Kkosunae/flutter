@@ -24,6 +24,7 @@ class _WelcomeImage extends State<WelcomeImage> {
         children: [
           Text("로그인 상태 : ${viewModel.isLogined}"),
           Text("결과값 토큰 nickname : " + (viewModel.user?.kakaoAccount?.profile?.nickname ?? '')),
+
           SizedBox(
               width: 300,
               child: IconButton(

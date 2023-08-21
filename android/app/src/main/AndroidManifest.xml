@@ -4,6 +4,9 @@
         android:label="kkosunae"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="m3lw8o5fjq" />
         <activity
             android:name="com.kakao.sdk.flutter.AuthCodeCustomTabsActivity"
             android:exported="true">

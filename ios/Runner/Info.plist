@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NMFClientId</key>
+	<string>m3lw8o5fjq</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -50,31 +52,12 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
-      <array>
-          <!-- common -->
-          <string>kakaoae6bcf099a4885a217f4cd8a63548c5e</string>
-
-          <!-- KakaoTalk login -->
-          <string>kakaokompassauth</string>
-          <string>storykompassauth</string>
-
-          <!-- KakaoLink -->
-          <string>kakaolink</string>
-          <string>kakaotalk-5.9.7</string>
-      </array>
-
-      <key>CFBundleURLTypes</key>
-          <array>
-            <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-              <!-- facebook login -->
-              <string>fbAPP-ID</string>
-
-              <!-- google login -->
-              <string>com.googleusercontent.apps.807916056194-u7plkppqfa1iqk5316u7qk473juepvgk</string>
-            </array>
-            </dict>
-          </array>
+	<array>
+		<string>kakaoae6bcf099a4885a217f4cd8a63548c5e</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-5.9.7</string>
+	</array>
 </dict>
 </plist>

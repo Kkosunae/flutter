@@ -6,6 +6,9 @@ PODS:
   - AppAuth/ExternalUserAgent (1.6.2):
     - AppAuth/Core
   - Flutter (1.0.0)
+  - flutter_naver_map (1.0.0):
+    - Flutter
+    - NMapsMap (= 3.16.2)
   - google_sign_in_ios (0.0.1):
     - Flutter
     - GoogleSignIn (~> 6.2)
@@ -19,6 +22,12 @@ PODS:
   - GTMSessionFetcher/Core (2.3.0)
   - kakao_flutter_sdk_common (1.5.0):
     - Flutter
+  - NMapsGeometry (1.0.1)
+  - NMapsMap (3.16.2):
+    - NMapsGeometry
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -29,8 +38,10 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - flutter_naver_map (from `.symlinks/plugins/flutter_naver_map/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
   - kakao_flutter_sdk_common (from `.symlinks/plugins/kakao_flutter_sdk_common/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
@@ -41,14 +52,20 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - NMapsGeometry
+    - NMapsMap
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  flutter_naver_map:
+    :path: ".symlinks/plugins/flutter_naver_map/ios"
   google_sign_in_ios:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
   kakao_flutter_sdk_common:
     :path: ".symlinks/plugins/kakao_flutter_sdk_common/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sign_in_with_apple:
@@ -59,15 +76,19 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_naver_map: d1ee15e7a2fe5360a19640648ceed5abf79d82aa
   google_sign_in_ios: 1256ff9d941db546373826966720b0c24804bcdd
   GoogleSignIn: 5651ce3a61e56ca864160e79b484cd9ed3f49b7a
   GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
   kakao_flutter_sdk_common: ceb36a134b53ae973da184f67f39993142377af4
+  NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
+  NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   sign_in_with_apple: f3bf75217ea4c2c8b91823f225d70230119b8440
   webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 
 PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:kkosunae/src/blocs/main_viewmodel.dart';
 import 'package:kkosunae/src/recources/login_platform.dart';
 import 'package:kkosunae/src/ui/welcome_screen.dart';
@@ -32,9 +33,15 @@ class MainState extends State<MainPage> {
         label:'PROFILE',
         icon: Icon(Icons.my_library_add)),
   ];
+  //각 탭마다 설정
   List pages=[
     Container(
-      child: Center(child: Text('MAP')),
+      child: NaverMap(
+        options: const NaverMapViewOptions(),
+        onMapReady: (controller) {
+          print("네이버 맵 로딩됨!");
+        },
+      ),
     ),
     Container(
       child: Center(child: Text('WALK')),
