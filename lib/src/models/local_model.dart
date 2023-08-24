@@ -9,8 +9,7 @@ class LocalModel {
       prefs.setBool("isLogin", isLogin);
   }
 
-  Future<bool> getIsLogin() async{
-
+  Future<bool> getIsLogin() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool? login = prefs.getBool('isLogin');
     if(login == null) {

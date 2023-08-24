@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkosunae/src/recources/login_platform.dart';
 
-import '../constants.dart';
 import '../blocs/main_viewmodel.dart';
 import 'login.dart';
 
@@ -29,7 +28,7 @@ class _WelcomeImage extends State<WelcomeImage> {
               width: 300,
               child: IconButton(
                 onPressed: () async {
-                  _loginPlatform =LoginPlatform.kakao;
+                  _loginPlatform = LoginPlatform.kakao;
                   viewModel.setLoginPlatform(_loginPlatform);
                   await viewModel.login();
                   if(viewModel.isLogined) {

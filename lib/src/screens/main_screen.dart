@@ -19,6 +19,7 @@ class MainState extends State<MainPage> {
   LoginPlatform _loginPlatform = LoginPlatform.none;
   late final viewModel;
   int _selectedIndex = 0;
+
   List<BottomNavigationBarItem> bottomItems = [
     BottomNavigationBarItem(
         label:'Map',
@@ -33,7 +34,8 @@ class MainState extends State<MainPage> {
         label:'PROFILE',
         icon: Icon(Icons.my_library_add)),
   ];
-  //각 탭마다 설정
+
+  // 각 탭마다 설정
   List pages=[
     Container(
       child: NaverMap(
@@ -53,6 +55,7 @@ class MainState extends State<MainPage> {
       child: Center(child: Text('PROFILE')),
     ),
   ];
+  
   @override
   Widget build(BuildContext context) {
     if(_isLogin) {
@@ -94,10 +97,8 @@ class MainState extends State<MainPage> {
         home: Scaffold(
           body: WelcomeScreen(),
         ),
-
       );
     }
-
   }
 
   @override
