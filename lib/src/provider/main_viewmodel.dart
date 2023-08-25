@@ -1,12 +1,13 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:kkosunae/src/models/local_model.dart';
-import 'package:kkosunae/src/recources/apple_login.dart';
-import 'package:kkosunae/src/recources/google_login.dart';
-import 'package:kkosunae/src/recources/kakao_login.dart';
-import 'package:kkosunae/src/recources/login_platform.dart';
-import 'package:kkosunae/src/recources/social_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../services/apple_login.dart';
+import '../services/google_login.dart';
+import '../services/kakao_login.dart';
+import '../services/login_platform.dart';
+import '../services/social_login.dart';
 
 class MainViewModel {
   SocialLogin _socialLogin = KakaoLogin();

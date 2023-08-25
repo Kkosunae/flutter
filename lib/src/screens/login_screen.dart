@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'welcome_image.dart';
+import 'login_widget.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({
     Key? key,
   }) : super(key: key);
 
@@ -11,7 +11,7 @@ class WelcomeScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        WelcomeImage(),
+        LoginWidget(),
 
       ],
     );

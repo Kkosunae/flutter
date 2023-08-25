@@ -1,5 +1,5 @@
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:kkosunae/src/recources/social_login.dart';
+import 'package:kkosunae/src/services/social_login.dart';
 
 class GoogleLogin implements SocialLogin {
   @override

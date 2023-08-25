@@ -1,19 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
-import 'package:kkosunae/src/blocs/main_viewmodel.dart';
-import 'package:kkosunae/src/recources/login_platform.dart';
-import 'package:kkosunae/src/ui/welcome_screen.dart';
+import 'package:kkosunae/src/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+import '../provider/main_viewmodel.dart';
+import '../services/login_platform.dart';
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
   MainState createState() => MainState();
 }
 
-class MainState extends State<MainPage> {
+class MainState extends State<MainScreen> {
   late SharedPreferences _preferences;
   bool _isLogin = false;
   LoginPlatform _loginPlatform = LoginPlatform.none;
@@ -62,19 +63,6 @@ class MainState extends State<MainPage> {
       return MaterialApp(
         home: Scaffold(
           body: pages[_selectedIndex],
-          // Column(
-          //   children: [
-          //     Text('메인 화면'),
-          //     ElevatedButton(
-          //         onPressed: () async {
-          //           await viewModel.logout();
-          //           setState(() {
-          //             _loadId();
-          //           });
-          //         },
-          //         child: Text('Logout')),
-          //   ],
-          // ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             backgroundColor: Colors.white,
@@ -95,7 +83,7 @@ class MainState extends State<MainPage> {
     } else {
       return MaterialApp(
         home: Scaffold(
-          body: WelcomeScreen(),
+          body: LoginScreen(),
         ),
       );
     }

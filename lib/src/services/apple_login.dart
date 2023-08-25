@@ -1,4 +1,4 @@
-import 'package:kkosunae/src/recources/social_login.dart';
+import 'package:kkosunae/src/services/social_login.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AppleLogin implements SocialLogin {
