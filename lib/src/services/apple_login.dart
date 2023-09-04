@@ -17,7 +17,9 @@ class AppleLogin implements SocialLogin {
     );
 
     // 이제 `credential`을 사용하여 사용자를 인증하십시오.
-    print(credential.identityToken);
+    print("identityToken : " + "${credential.identityToken}");
+    print(credential.authorizationCode);
+
     return true;
   }
 }

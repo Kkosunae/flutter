@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:kkosunae/src/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../provider/main_viewmodel.dart';
 import '../services/login_platform.dart';
+import 'mainpages/community_widget.dart';
+import 'mainpages/home_widget.dart';
+import 'mainpages/map_widget.dart';
+import 'mainpages/my_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -21,40 +23,27 @@ class MainState extends State<MainScreen> {
   late final viewModel;
   int _selectedIndex = 0;
 
-  List<BottomNavigationBarItem> bottomItems = [
+  List<BottomNavigationBarItem> bottomItems = [ // BottomNavigation
     BottomNavigationBarItem(
-        label:'Map',
+        label:'HOME',
+        icon: Icon(Icons.home)),
+    BottomNavigationBarItem(
+        label:'MAP',
         icon: Icon(Icons.map)),
     BottomNavigationBarItem(
-        label:'WALK',
-        icon: Icon(Icons.accessibility)),
+        label:'COMMUNITY',
+        icon: Icon(Icons.people)),
     BottomNavigationBarItem(
-        label:'POINT',
-        icon: Icon(Icons.point_of_sale)),
-    BottomNavigationBarItem(
-        label:'PROFILE',
-        icon: Icon(Icons.my_library_add)),
+        label:'MY',
+        icon: Icon(Icons.person)),
   ];
 
   // 각 탭마다 설정
   List pages=[
-    Container(
-      child: NaverMap(
-        options: const NaverMapViewOptions(),
-        onMapReady: (controller) {
-          print("네이버 맵 로딩됨!");
-        },
-      ),
-    ),
-    Container(
-      child: Center(child: Text('WALK')),
-    ),
-    Container(
-      child: Center(child: Text('POINT')),
-    ),
-    Container(
-      child: Center(child: Text('PROFILE')),
-    ),
+    HomeScreen(),
+    MapScreen(),
+    CommunityScreen(),
+    MypageScreen(),
   ];
   
   @override
@@ -71,6 +60,10 @@ class MainState extends State<MainScreen> {
             selectedFontSize: 14,
             unselectedFontSize: 10,
             currentIndex: _selectedIndex,
+            // Label 표시 안하기
+            // showSelectedLabels: false,
+            // showUnselectedLabels: false,
+
             onTap: (int index) {
               setState(() {
                 _selectedIndex = index;

@@ -100,7 +100,8 @@ class _LoginWidget extends State<LoginWidget> {
                   }
                   setState(() {});
                 },
-                icon: Image.asset('assets/kakao_login_medium_narrow.png'), )
+                icon: Image.asset('assets/kakao_login_medium_narrow.png'),
+              )
           ),
           ElevatedButton(
               onPressed: () async {
