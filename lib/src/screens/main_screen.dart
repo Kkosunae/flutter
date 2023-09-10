@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kkosunae/src/screens/login_screen.dart';
+import 'package:kkosunae/src/screens/shop_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../provider/main_viewmodel.dart';
-import '../services/login_platform.dart';
-import 'mainpages/community_widget.dart';
-import 'mainpages/home_widget.dart';
-import 'mainpages/map_widget.dart';
-import 'mainpages/mypage_screen.dart';
+import 'package:kkosunae/src/provider/main_viewmodel.dart';
+import 'package:kkosunae/src/services/login_platform.dart';
+import 'package:kkosunae/src/screens/point_screen.dart';
+import 'package:kkosunae/src/screens/home_screen.dart';
+import 'package:kkosunae/src/screens/map_screen.dart';
+import 'package:kkosunae/src/screens/mypage_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -31,8 +32,11 @@ class MainState extends State<MainScreen> {
         label:'MAP',
         icon: Icon(Icons.map)),
     BottomNavigationBarItem(
-        label:'COMMUNITY',
-        icon: Icon(Icons.people)),
+        label:'POINT',
+        icon: Icon(Icons.point_of_sale)),
+    BottomNavigationBarItem(
+        label:'SHOP',
+        icon: Icon(Icons.shop)),
     BottomNavigationBarItem(
         label:'MY',
         icon: Icon(Icons.person)),
@@ -42,7 +46,8 @@ class MainState extends State<MainScreen> {
   List pages=[
     HomeScreen(),
     MapScreen(),
-    CommunityScreen(),
+    PointScreen(),
+    ShopScreen(),
     MypageScreen(),
   ];
   

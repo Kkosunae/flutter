@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widget/custom_app_bar_widget.dart';
+import '../widget/custom_app_bar_widget.dart';
 
 class MypageScreen extends StatefulWidget {
   @override
