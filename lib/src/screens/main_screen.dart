@@ -7,7 +7,7 @@ import '../services/login_platform.dart';
 import 'mainpages/community_widget.dart';
 import 'mainpages/home_widget.dart';
 import 'mainpages/map_widget.dart';
-import 'mainpages/my_widget.dart';
+import 'mainpages/mypage_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
