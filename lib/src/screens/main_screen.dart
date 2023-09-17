@@ -94,10 +94,12 @@ class MainState extends State<MainScreen> {
 
     _loadId();
   }
+
   _loadId() async {
     _preferences = await SharedPreferences.getInstance();
     setState(() {
-      _isLogin = (_preferences.getBool('isLogin') ?? false);
+      // _isLogin = (_preferences.getBool('isLogin') ?? false);
+      _isLogin = true;
     });
   }
 }

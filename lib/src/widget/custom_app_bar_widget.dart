@@ -13,14 +13,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     const settingIcon = Icon(Icons.settings);
     const notificationIcon = Icon(Icons.notifications_none);
     const moreIcon = Icon(Icons.more_vert);
+    const searchIcon = Icon(Icons.search);
     return AppBar(
+      // leading: BackButton(
+      //   onPressed: () => Navigator.of(context).pop(),
+      // ),
       title: Text(title),
       actions: [
         IconButton(
           onPressed: () {
             print('search button is clicked');
           },
-          icon: settingIcon,
+          icon: this.title == "지도" ? searchIcon : settingIcon,
         ),
         IconButton(
           onPressed: () {
